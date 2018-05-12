@@ -1,0 +1,31 @@
+digraph stack {
+  bgcolor="#0fef00"
+  rankdir = LR
+
+  stack_bottom[label="栈低",shape="plaintext"]
+  stack_top[label="栈顶",shape="plaintext"]
+  rbp[style="invis"]
+  Stack2[shape="record",label="<f1>.\n.\n.|<f2>.|<f3>参数n|
+  <f4>...|<f5>返回地址|<f6>\n被保存的寄存器\n\n|<f7>局部变量|<f8>参数构造器"]//[style=invis]
+former[shape="plaintext",label="较早的栈帧"]
+funcQ[shape="plaintext",label="调用函数\nP的栈帧"]
+funcP[shape="plaintext",label="正在执行\nQ函数的栈帧"]
+{
+  edge[penwidth="1",color=violetred]
+
+Stack2:f1 ->former
+Stack2:f2 -> funcQ:w
+Stack2:f5 -> funcQ:w
+Stack2:f6 -> funcP:w
+Stack2:f8 -> funcP:w
+
+stack_bottom ->Stack2:f1
+stack_top ->Stack2:f8[label="栈指针\n%rsp"]
+rbp ->Stack2:f5[label="%rbp"]
+
+
+
+}
+
+
+}
