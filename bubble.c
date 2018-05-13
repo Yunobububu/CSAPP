@@ -1,6 +1,6 @@
 /**
 *bubble sort:
-*time consume:θ(n) = n ^ 2;
+*time consume:θ(n ^ 2);
 *extra space consume: θ(1)
 *sort in place: Yes
 *stable: yes
@@ -17,6 +17,7 @@ int main(){
 	}
 	printf("\n");
 	bubble(arr,5);
+	printf("after bubble sort:");
 	for(int i = 0;i < 5;i++){
 		printf("%d ",arr[i]);
 	}
