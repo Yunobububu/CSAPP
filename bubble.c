@@ -3,7 +3,7 @@
 *time consume:θ(n ^ 2);
 *extra space consume: θ(1)
 *sort in place: Yes
-*stable: yes
+*stable: Yes
 **/
 #include<stdio.h>
 #include<stdlib.h>
@@ -17,7 +17,7 @@ int main(){
 	}
 	printf("\n");
 	bubble(arr,5);
-	printf("after bubble sort:");
+	printf("after bubble sort:\n");
 	for(int i = 0;i < 5;i++){
 		printf("%d ",arr[i]);
 	}
